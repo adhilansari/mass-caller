@@ -74,7 +74,7 @@ const Header = () => {
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 bg-white dark:bg-caller-dark top-16 shadow-lg">
           <div className="container mx-auto px-4 py-6 flex flex-col items-center space-y-2 
-                    bg-white/30 dark:bg-gray-900/40 
+                    bg-caller-blue dark:bg-caller-blue/40 
                     backdrop-blur-md 
                     border border-white/20 dark:border-gray-800/50 
                     rounded-xl 
