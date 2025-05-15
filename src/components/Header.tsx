@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
-import { X, Menu } from "lucide-react";
+import { X, Menu, Calendar } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Header = () => {
@@ -13,6 +13,13 @@ const Header = () => {
     toast({
       title: "Demo Call Scheduled",
       description: "We'll contact you shortly to set up a demo call.",
+    });
+  };
+
+  const handleScheduleDemo = () => {
+    toast({
+      title: "Demo Scheduled",
+      description: "We'll reach out to schedule a personalized demo.",
     });
   };
 
@@ -38,6 +45,14 @@ const Header = () => {
           </nav>
           <div className="flex items-center space-x-3">
             <ThemeToggle />
+            <Button 
+              variant="outline" 
+              className="border-caller-blue text-caller-blue hover:bg-caller-blue/10 dark:border-caller-purple dark:text-gray-200"
+              onClick={handleDemoClick}
+            >
+              <Calendar className="w-4 h-4 mr-1" />
+              Schedule Demo
+            </Button>
             <Button className="button-primary">Get Started</Button>
           </div>
         </div>
@@ -84,10 +99,25 @@ const Header = () => {
             >
               Pricing
             </a>
-            <Button className="button-primary w-full" onClick={() => {setIsMenuOpen(false); handleDemoClick();}}>
+            <Button 
+              className="button-primary w-full flex items-center justify-center" 
+              onClick={() => {setIsMenuOpen(false); handleDemoClick();}}
+            >
               Start Demo Call
             </Button>
-            <Button variant="outline" className="w-full border-2 border-gray-300 dark:border-gray-600" onClick={() => setIsMenuOpen(false)}>
+            <Button 
+              variant="outline" 
+              className="w-full border-2 border-caller-blue dark:border-caller-purple text-caller-blue dark:text-white flex items-center justify-center gap-2"
+              onClick={() => {setIsMenuOpen(false); handleScheduleDemo();}}
+            >
+              <Calendar className="w-4 h-4" />
+              Schedule Demo
+            </Button>
+            <Button 
+              variant="outline" 
+              className="w-full border-2 border-gray-300 dark:border-gray-600" 
+              onClick={() => setIsMenuOpen(false)}
+            >
               Get Started
             </Button>
           </div>
