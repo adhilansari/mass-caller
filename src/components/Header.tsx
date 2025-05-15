@@ -2,9 +2,19 @@
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
+import { X, Menu } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { toast } = useToast();
+
+  const handleDemoClick = () => {
+    toast({
+      title: "Demo Call Scheduled",
+      description: "We'll contact you shortly to set up a demo call.",
+    });
+  };
 
   return (
     <header className="fixed w-full top-0 z-50 bg-white/80 dark:bg-caller-dark/80 backdrop-blur-md py-4 border-b border-gray-100 dark:border-gray-800">
@@ -36,28 +46,15 @@ const Header = () => {
         <div className="md:hidden flex items-center space-x-3">
           <ThemeToggle />
           <button
-            className="p-2"
+            className="p-2 bg-gray-100 dark:bg-gray-800 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d={
-                  isMenuOpen
-                    ? "M6 18L18 6M6 6l12 12"
-                    : "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                }
-              />
-            </svg>
+            {isMenuOpen ? (
+              <X className="w-6 h-6 text-gray-700 dark:text-gray-200" />
+            ) : (
+              <Menu className="w-6 h-6 text-gray-700 dark:text-gray-200" />
+            )}
           </button>
         </div>
       </div>
@@ -68,26 +65,29 @@ const Header = () => {
           <div className="container mx-auto px-4 py-6 flex flex-col items-center space-y-6">
             <a 
               href="#features" 
-              className="text-lg font-medium text-gray-800 dark:text-gray-100"
+              className="text-lg font-medium text-gray-800 dark:text-gray-100 w-full py-3 text-center bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
               onClick={() => setIsMenuOpen(false)}
             >
               Features
             </a>
             <a 
               href="#how-it-works" 
-              className="text-lg font-medium text-gray-800 dark:text-gray-100"
+              className="text-lg font-medium text-gray-800 dark:text-gray-100 w-full py-3 text-center bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
               onClick={() => setIsMenuOpen(false)}
             >
               How It Works
             </a>
             <a 
               href="#pricing" 
-              className="text-lg font-medium text-gray-800 dark:text-gray-100"
+              className="text-lg font-medium text-gray-800 dark:text-gray-100 w-full py-3 text-center bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
               onClick={() => setIsMenuOpen(false)}
             >
               Pricing
             </a>
-            <Button className="button-primary w-full" onClick={() => setIsMenuOpen(false)}>
+            <Button className="button-primary w-full" onClick={() => {setIsMenuOpen(false); handleDemoClick();}}>
+              Start Demo Call
+            </Button>
+            <Button variant="outline" className="w-full border-2 border-gray-300 dark:border-gray-600" onClick={() => setIsMenuOpen(false)}>
               Get Started
             </Button>
           </div>

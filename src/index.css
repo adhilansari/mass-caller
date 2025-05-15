@@ -114,6 +114,6 @@
   }
   
   .button-secondary {
-    @apply bg-white dark:bg-caller-darkblue text-caller-blue dark:text-white border border-caller-blue dark:border-caller-purple py-3 px-6 rounded-full font-semibold transition-all duration-300 hover:bg-caller-blue hover:text-white dark:hover:bg-caller-purple;
+    @apply bg-white dark:bg-caller-darkblue text-caller-blue dark:text-white border border-caller-blue dark:border-caller-purple py-3 px-6 rounded-full font-semibold transition-all duration-300 hover:bg-caller-blue/10 hover:text-caller-blue dark:hover:bg-caller-purple/20 dark:hover:text-white;
   }
 }
