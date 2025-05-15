@@ -3,13 +3,13 @@ import ThemeToggle from "./ThemeToggle";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="bg-gray-100 dark:bg-caller-darkblue py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold gradient-text mb-4">Instant Reach Caller</h3>
+            <h3 className="text-xl font-bold gradient-text mb-4">Mass Caller</h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
               Automate your customer calls, increase engagement, and get real-time confirmations.
             </p>
@@ -20,7 +20,7 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          
+
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2">
@@ -46,7 +46,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-semibold mb-4">Support</h4>
             <ul className="space-y-2">
@@ -72,7 +72,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-2">
@@ -94,10 +94,10 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-200 dark:border-gray-700 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 dark:text-gray-400 text-sm">
-            © {currentYear} Instant Reach Caller. All rights reserved.
+            © {currentYear} Mass Caller. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-500 hover:text-caller-blue dark:text-gray-400 dark:hover:text-caller-purple">

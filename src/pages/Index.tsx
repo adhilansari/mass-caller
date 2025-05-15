@@ -5,7 +5,7 @@ import FeatureCard from "@/components/FeatureCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import StepCard from "@/components/StepCard";
 import { features, testimonials, howItWorks, pricing, useCases, faqs } from "@/data/appData";
-import { 
+import {
   Users, Phone, Megaphone, BarChart3, Cloud, Workflow,
   UserPlus, MessageSquare, PhoneCall, Mail, Send
 } from "lucide-react";
@@ -57,7 +57,7 @@ const Index = () => {
       });
       return;
     }
-    
+
     toast({
       title: "Thank you for joining!",
       description: "We'll keep you updated on our latest features.",
@@ -72,7 +72,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 bg-gradient-to-b from-white to-gray-100 dark:from-caller-dark dark:to-caller-darkblue">
         <div className="container mx-auto">
@@ -89,15 +89,15 @@ const Index = () => {
                 <Button className="button-primary">
                   🚀 Get Started Instantly
                 </Button>
-                <Button 
-                  className="button-secondary flex items-center" 
+                <Button
+                  className="button-secondary flex items-center"
                   onClick={openWaitlistDialog}
                 >
                   <Mail className="w-4 h-4 mr-2" />
                   Join Waitlist
                 </Button>
               </div>
-              
+
               <div className="mt-8 grid grid-cols-2 gap-3">
                 <div className="flex items-center">
                   <div className="bg-green-100 dark:bg-green-900/30 rounded-full p-1 mr-2">
@@ -133,20 +133,20 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="md:w-1/2">
               <div className="relative">
                 <div className="w-64 md:w-80 mx-auto rounded-3xl overflow-hidden shadow-2xl border-8 border-white dark:border-caller-darkblue animate-float">
-                  <img 
-                    src="/lovable-uploads/bd0d6ecd-bf98-4f98-8201-c50ce8dffab8.png" 
-                    alt="Instant Reach Caller Dashboard" 
+                  <img
+                    src="/assets/bd0d6ecd-bf98-4f98-8201-c50ce8dffab8.png"
+                    alt="Mass Caller Dashboard"
                     className="w-full h-auto"
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 md:right-12 w-48 md:w-56 rounded-2xl overflow-hidden shadow-xl border-4 border-white dark:border-caller-darkblue">
-                  <img 
-                    src="/lovable-uploads/3fd98f08-0ce6-470f-8f52-5c65bc1dc9b5.png" 
-                    alt="Call Screen" 
+                  <img
+                    src="/assets/3fd98f08-0ce6-470f-8f52-5c65bc1dc9b5.png"
+                    alt="Call Screen"
                     className="w-full h-auto"
                   />
                 </div>
@@ -155,7 +155,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Problem & Solution Section */}
       <section className="py-16 px-4 bg-white dark:bg-caller-dark">
         <div className="container mx-auto">
@@ -163,7 +163,7 @@ const Index = () => {
             Why waste time calling one-by-one when your <br className="hidden md:block" />
             <span className="gradient-text">competitors are already automating?</span>
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="bg-red-50 dark:bg-red-900/10 rounded-xl p-6">
               <h3 className="text-xl font-semibold mb-4 text-caller-red">The Problems</h3>
@@ -186,7 +186,7 @@ const Index = () => {
                 </li>
               </ul>
             </div>
-            
+
             <div className="bg-green-50 dark:bg-green-900/10 rounded-xl p-6">
               <h3 className="text-xl font-semibold mb-4 text-caller-green">Our Solution</h3>
               <p className="mb-4">
@@ -210,12 +210,12 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Who Is It For Section */}
       <section className="py-16 px-4 bg-gray-50 dark:bg-caller-darkblue">
         <div className="container mx-auto">
           <h2 className="section-heading">Who Is It For?</h2>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
               { icon: "📣", label: "Marketing & Advertising Agencies" },
@@ -231,7 +231,7 @@ const Index = () => {
               </div>
             ))}
           </div>
-          
+
           <div className="text-center mt-8">
             <p className="text-lg font-medium italic">
               "Anyone who needs to reach many people fast – this is your tool."
@@ -239,12 +239,12 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Features Section */}
       <section id="features" className="py-16 px-4 bg-white dark:bg-caller-dark">
         <div className="container mx-auto">
           <h2 className="section-heading">Key Features</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature) => (
               <FeatureCard
@@ -257,7 +257,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Pricing Section */}
       <section id="pricing" className="py-16 px-4 bg-gray-50 dark:bg-caller-darkblue">
         <div className="container mx-auto">
@@ -267,16 +267,15 @@ const Index = () => {
           <p className="text-center mb-12 text-gray-600 dark:text-gray-300">
             No hidden fees. No monthly commitment. You only pay when your call is picked up.
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {pricing.map((plan) => (
-              <div 
-                key={plan.id} 
-                className={`bg-white dark:bg-caller-darkblue rounded-xl shadow-lg overflow-hidden border-2 ${
-                  plan.isPopular 
-                    ? 'border-caller-purple relative transform scale-105' 
-                    : 'border-transparent'
-                }`}
+              <div
+                key={plan.id}
+                className={`bg-white dark:bg-caller-darkblue rounded-xl shadow-lg overflow-hidden border-2 ${plan.isPopular
+                  ? 'border-caller-purple relative transform scale-105'
+                  : 'border-transparent'
+                  }`}
               >
                 {plan.isPopular && (
                   <div className="bg-caller-purple text-white text-center py-1 text-sm font-medium">
@@ -292,7 +291,7 @@ const Index = () => {
                     )}
                   </div>
                   <p className="text-gray-600 dark:text-gray-300 mb-6">{plan.description}</p>
-                  
+
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start">
@@ -301,11 +300,10 @@ const Index = () => {
                       </li>
                     ))}
                   </ul>
-                  
-                  <Button 
-                    className={`w-full ${
-                      plan.isPopular ? 'button-primary' : 'button-secondary'
-                    }`}
+
+                  <Button
+                    className={`w-full ${plan.isPopular ? 'button-primary' : 'button-secondary'
+                      }`}
                   >
                     Choose Plan
                   </Button>
@@ -315,12 +313,12 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
+
       {/* How It Works Section */}
       <section id="how-it-works" className="py-16 px-4 bg-white dark:bg-caller-dark">
         <div className="container mx-auto">
           <h2 className="section-heading">How It Works</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {howItWorks.map((item) => (
               <StepCard
@@ -334,43 +332,43 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
+
       {/* App Screenshots */}
       <section className="py-16 px-4 bg-gray-50 dark:bg-caller-darkblue overflow-hidden">
         <div className="container mx-auto">
           <h2 className="section-heading">See It In Action</h2>
-          
+
           <div className="flex flex-nowrap overflow-x-auto pb-8 gap-6 md:justify-center">
             <div className="w-64 flex-shrink-0 rounded-3xl overflow-hidden shadow-lg border-8 border-white dark:border-caller-darkblue transform rotate-2">
-              <img 
-                src="/lovable-uploads/e9c21c6a-3c37-4d82-a89b-aab5c0bb3332.png" 
-                alt="Home Screen" 
+              <img
+                src="/assets/e9c21c6a-3c37-4d82-a89b-aab5c0bb3332.png"
+                alt="Home Screen"
                 className="w-full h-auto"
               />
             </div>
             <div className="w-64 flex-shrink-0 rounded-3xl overflow-hidden shadow-lg border-8 border-white dark:border-caller-darkblue transform -rotate-1">
-              <img 
-                src="/lovable-uploads/9f7ba55b-8661-4e50-b3e3-a1f73d33efe3.png" 
-                alt="Groups Screen" 
+              <img
+                src="/assets/9f7ba55b-8661-4e50-b3e3-a1f73d33efe3.png"
+                alt="Groups Screen"
                 className="w-full h-auto"
               />
             </div>
             <div className="w-64 flex-shrink-0 rounded-3xl overflow-hidden shadow-lg border-8 border-white dark:border-caller-darkblue transform rotate-1">
-              <img 
-                src="/lovable-uploads/1645b1cb-198a-4c1d-9dd6-fe97d3f2ff33.png" 
-                alt="Call Screen" 
+              <img
+                src="/assets/1645b1cb-198a-4c1d-9dd6-fe97d3f2ff33.png"
+                alt="Call Screen"
                 className="w-full h-auto"
               />
             </div>
             <div className="w-64 flex-shrink-0 rounded-3xl overflow-hidden shadow-lg border-8 border-white dark:border-caller-darkblue transform -rotate-2">
-              <img 
-                src="/lovable-uploads/f76392f1-4998-4e2c-a1ee-a7277c256f2b.png" 
-                alt="Settings Screen" 
+              <img
+                src="/assets/f76392f1-4998-4e2c-a1ee-a7277c256f2b.png"
+                alt="Settings Screen"
                 className="w-full h-auto"
               />
             </div>
           </div>
-          
+
           <div className="text-center mt-8 flex flex-wrap justify-center gap-3">
             <div className="bg-white dark:bg-caller-darkblue px-4 py-2 rounded-full shadow-sm">
               <span className="text-caller-green">✓</span> Intuitive
@@ -384,12 +382,12 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Testimonials Section */}
       <section className="py-16 px-4 bg-white dark:bg-caller-dark">
         <div className="container mx-auto">
           <h2 className="section-heading">What Our Customers Say</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial) => (
               <TestimonialCard
@@ -403,12 +401,12 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
+
       {/* FAQ Section */}
       <section className="py-16 px-4 bg-gray-50 dark:bg-caller-darkblue">
         <div className="container mx-auto max-w-3xl">
           <h2 className="section-heading">Frequently Asked Questions</h2>
-          
+
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq) => (
               <AccordionItem key={faq.id} value={`item-${faq.id}`}>
@@ -419,7 +417,7 @@ const Index = () => {
           </Accordion>
         </div>
       </section>
-      
+
       {/* CTA Section - Updated with email collection */}
       <section className="py-16 px-4 bg-gradient-to-r from-caller-blue to-caller-purple text-white">
         <div className="container mx-auto text-center max-w-3xl">
@@ -429,15 +427,15 @@ const Index = () => {
           <p className="text-xl mb-8 text-gray-100">
             Join 1,000+ teams already using our smart bulk calling app to save time and grow their business.
           </p>
-          
+
           {/* Email collection form */}
           <form onSubmit={handleJoinWaitlist} className="max-w-md mx-auto mb-8">
             <div className="flex flex-col sm:flex-row gap-2">
               <div className="flex-grow">
-                <Input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/70 h-12" 
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="bg-white/10 border-white/20 text-white placeholder:text-white/70 h-12"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -449,20 +447,20 @@ const Index = () => {
               </Button>
             </div>
           </form>
-          
+
           <div className="flex flex-wrap justify-center gap-4">
             <Button className="bg-white text-caller-blue hover:bg-gray-100 font-semibold text-lg py-6 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
               👉 Start Free Trial
             </Button>
-            <Button variant="outline" className="border-2 border-white text-white hover:bg-white/20 font-semibold text-lg py-6 px-8 rounded-full shadow-lg">
+            <Button variant="outline" className="border-2 border-white text-caller-blue hover:bg-white/20 font-semibold text-lg py-6 px-8 rounded-full shadow-lg">
               💬 Schedule Demo Call
             </Button>
           </div>
         </div>
       </section>
-      
+
       <Footer />
-      
+
       {/* Waitlist Dialog */}
       <WaitlistDialog open={isWaitlistOpen} onOpenChange={setIsWaitlistOpen} />
     </div>
