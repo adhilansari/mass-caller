@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,20 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                caller: {
+                    blue: "#2563EB",
+                    purple: "#8B5CF6",
+                    dark: "#0F172A",
+                    darkblue: "#1E293B",
+                    green: "#10B981",
+                    red: "#EF4444",
+                    gray: "#F1F5F9",
+                    darkgray: "#334155",
+                }
+			},
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +98,20 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'float': {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-10px)' },
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'float': 'float 6s ease-in-out infinite',
+			},
+            backgroundImage: {
+                'gradient-hero': 'linear-gradient(90deg, #2563EB 0%, #8B5CF6 100%)',
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
