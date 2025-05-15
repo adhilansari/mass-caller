@@ -2,25 +2,21 @@
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
-import { X, Menu, Calendar } from "lucide-react";
+import { X, Menu, Calendar, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { DemoDialog } from "./DemoDialog";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
   const { toast } = useToast();
 
   const handleDemoClick = () => {
-    toast({
-      title: "Demo Call Scheduled",
-      description: "We'll contact you shortly to set up a demo call.",
-    });
+    setIsDemoOpen(true);
   };
 
   const handleScheduleDemo = () => {
-    toast({
-      title: "Demo Scheduled",
-      description: "We'll reach out to schedule a personalized demo.",
-    });
+    setIsDemoOpen(true);
   };
 
   return (
@@ -123,6 +119,9 @@ const Header = () => {
           </div>
         </div>
       )}
+      
+      {/* Demo Dialog */}
+      <DemoDialog open={isDemoOpen} onOpenChange={setIsDemoOpen} />
     </header>
   );
 };

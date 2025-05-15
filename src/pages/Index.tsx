@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,7 +7,7 @@ import StepCard from "@/components/StepCard";
 import { features, testimonials, howItWorks, pricing, useCases, faqs } from "@/data/appData";
 import { 
   Users, Phone, Megaphone, BarChart3, Cloud, Workflow,
-  UserPlus, MessageSquare, PhoneCall
+  UserPlus, MessageSquare, PhoneCall, Mail, Send
 } from "lucide-react";
 import {
   Accordion,
@@ -16,6 +15,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { useToast } from "@/hooks/use-toast";
+import { WaitlistDialog } from "@/components/WaitlistDialog";
 
 // Helper function to render appropriate icons
 const renderIcon = (iconName: string) => {
@@ -40,6 +43,32 @@ const renderIcon = (iconName: string) => {
 };
 
 const Index = () => {
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const { toast } = useToast();
+
+  const handleJoinWaitlist = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes('@')) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    toast({
+      title: "Thank you for joining!",
+      description: "We'll keep you updated on our latest features.",
+    });
+    setEmail("");
+  };
+
+  const openWaitlistDialog = () => {
+    setIsWaitlistOpen(true);
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -60,8 +89,12 @@ const Index = () => {
                 <Button className="button-primary">
                   🚀 Get Started Instantly
                 </Button>
-                <Button className="button-secondary">
-                  💬 Book a Demo
+                <Button 
+                  className="button-secondary flex items-center" 
+                  onClick={openWaitlistDialog}
+                >
+                  <Mail className="w-4 h-4 mr-2" />
+                  Join Waitlist
                 </Button>
               </div>
               
@@ -387,7 +420,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* CTA Section */}
+      {/* CTA Section - Updated with email collection */}
       <section className="py-16 px-4 bg-gradient-to-r from-caller-blue to-caller-purple text-white">
         <div className="container mx-auto text-center max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -396,6 +429,27 @@ const Index = () => {
           <p className="text-xl mb-8 text-gray-100">
             Join 1,000+ teams already using our smart bulk calling app to save time and grow their business.
           </p>
+          
+          {/* Email collection form */}
+          <form onSubmit={handleJoinWaitlist} className="max-w-md mx-auto mb-8">
+            <div className="flex flex-col sm:flex-row gap-2">
+              <div className="flex-grow">
+                <Input 
+                  type="email" 
+                  placeholder="Enter your email" 
+                  className="bg-white/10 border-white/20 text-white placeholder:text-white/70 h-12" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <Button type="submit" className="bg-white text-caller-blue hover:bg-gray-100 font-semibold h-12">
+                <Send className="w-4 h-4 mr-2" />
+                Join Waitlist
+              </Button>
+            </div>
+          </form>
+          
           <div className="flex flex-wrap justify-center gap-4">
             <Button className="bg-white text-caller-blue hover:bg-gray-100 font-semibold text-lg py-6 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
               👉 Start Free Trial
@@ -408,6 +462,9 @@ const Index = () => {
       </section>
       
       <Footer />
+      
+      {/* Waitlist Dialog */}
+      <WaitlistDialog open={isWaitlistOpen} onOpenChange={setIsWaitlistOpen} />
     </div>
   );
 };
