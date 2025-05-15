@@ -75,12 +75,12 @@ const Header = () => {
         <div className="fixed inset-0 z-40 bg-white dark:bg-caller-dark top-16 shadow-lg">
           <div className="container mx-auto px-4 py-6 flex flex-col items-center space-y-2 
                     bg-caller-blue dark:bg-caller-blue/40 
-                    backdrop-blur-md 
+                    backdrop-blur-lg 
                     border border-white/20 dark:border-gray-800/50 
                     rounded-xl 
                     shadow-lg
                     bg-gradient-to-br from-white/40 to-white/80 
-                    dark:from-gray-800/40 dark:to-blue-900/50">
+                    dark:from-gray-800/40 dark:to-blue-900">
             <a
               href="#features"
               className="text-lg font-medium text-gray-800 dark:text-gray-100 w-full py-3 text-center bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
